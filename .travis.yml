@@ -17,9 +17,10 @@ before_install:
   # Setup Python environment with BLAS libraries
   - |
       if [[ $TRAVIS_PYTHON_VERSION == 2.7 ]]; then
-         wget -q http://repo.continuum.io/miniconda/Miniconda2-4.4.10-Linux-x86_64.sh -O miniconda.sh
+      # "./.travis-data.sh: line 8: fuel-download: command not found" with minocnda 4.4.10
+         wget -q http://repo.continuum.io/miniconda/Miniconda2-4.3.31-Linux-x86_64.sh -O miniconda.sh
       else
-         wget -q http://repo.continuum.io/miniconda/Miniconda3-4.4.10-Linux-x86_64.sh -O miniconda.sh
+         wget -q http://repo.continuum.io/miniconda/Miniconda3-4.3.31-Linux-x86_64.sh -O miniconda.sh
       fi
   - chmod +x miniconda.sh
   - ./miniconda.sh -b -p $HOME/miniconda
